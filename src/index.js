@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Map from './components/Map';
+import Header from './components/Header/Header';
 
 function App() {
   return (
-    <div>
-      <h1>Globe Trotter!</h1>
-      <Map />
-    </div>
+      <Header/>
+      <Map/>
   )
 }
 
