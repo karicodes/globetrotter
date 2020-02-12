@@ -1,5 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import Map from '../../components/Map';
+import React, { useState, useEffect } from 'react';
+import Map from './components/Map';
+import ToggleButtons from './components/ToggleButtons';
+import { Container } from './Main.styles';
 
 function Main() {
   const [items, setItems] = useState([]);
@@ -19,16 +21,17 @@ function Main() {
   }
 
   return (
-    <Fragment>
+    <Container>
+      <ToggleButtons />
       <Map />
-      <select>
+      {/* <select>
         {items.map(item => (
           <option key={item.id}>
             {item.name}
           </option>
         ))}
-      </select>
-    </Fragment>
+      </select> */}
+    </Container>
   );
 }
 
