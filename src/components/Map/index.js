@@ -18,7 +18,7 @@ class Map extends Component {
     return (
       <ReactMapGL
         {...this.state.viewport}
-        mapboxApiAccessToken={mapToken.globeTrotter}
+        mapboxApiAccessToken={mapToken.publicToken}
         onViewportChange={(viewport) => this.setState({viewport})}
       />
     );
