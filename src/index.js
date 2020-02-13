@@ -1,15 +1,5 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom';
-import Map from './components/Map/index';
-import Header from './components/Header/Header';
-
-function App() {
-  return (
-    <div>
-      <Header />
-      {/* <Map /> */}
-    </div>
-  )
-};
+import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
