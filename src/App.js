@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Main from './sections/Main';
 import { Container, Title } from './App.styles';
 
 function App() {
   return (
     <Container>
-      <Title>GlobeTrotter</Title>
+
       <Main />
     </Container>
   )

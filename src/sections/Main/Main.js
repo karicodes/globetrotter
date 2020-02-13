@@ -5,10 +5,6 @@ import Summary from './components/Summary';
 import ToggleButtons from './components/ToggleButtons';
 import { Container } from './Main.styles';
 
-function greetPerson() {
-  console.log('hello nug')
-}
-
 function Main() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
