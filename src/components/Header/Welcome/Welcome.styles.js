@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const WelcomeBack = styled.span`
-    font-weight: bold;
-    margin-left: 80%;
+export const WelcomeBack = styled.div`
+    font-style: oblique;
+    margin-left: 50%;
     margin-right: 5%;
-    margin-bottom: 100px;
-    margin-top: 100px;     
+    margin-top: 5%;     
     text-align: right; 
-    font-family: 'Italianno';
-    font-size: 3rem;
-    color: #eee6eb;
+    font-family: 'Palatino Linotype';
+    font-size: 1rem;
+    color: #f98686;
 `

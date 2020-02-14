@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const CustomButton = styled.button`
-    font-weight: bold;
-    margin-left: 80%;
-    margin-right: 5%;
-    margin-bottom: 100px;
-    margin-top: 100px;     
-    text-align: right; 
-    font-family: 'Italianno';
-    font-size: 3rem;
-    color: #eee6eb;
+    
+    margin-left: 90%;
+    margin-right: 0%;
+       
+    text-align: center; 
+    font-family: 'Palatino Linotype';
+    font-size: 0.8rem;
+    color: #fcf0bb;
+    background-color:  #00b3b3;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right:15px;
 `
