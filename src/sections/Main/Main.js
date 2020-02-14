@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Map from './components/Map';
+import List from './components/List';
+import Summary from './components/Summary';
 import ToggleButtons from './components/ToggleButtons';
 import { Container } from './Main.styles';
 
 function Main() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [view, setView] = useState('map');
 
   useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
@@ -22,8 +25,10 @@ function Main() {
 
   return (
     <Container>
-      <ToggleButtons />
-      <Map />
+      <ToggleButtons view={view} setView={setView} />
+      {view === 'map' && <Map />}
+      {view === 'list' && <List />}
+      {view === 'summary' && <Summary />}
       {/* <select>
         {items.map(item => (
           <option key={item.id}>
