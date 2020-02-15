@@ -31,9 +31,6 @@ const AddDestination = (props) => (
               name='htmlRadios'
             />
           </Form.Group>
-          <Form.Group grouped>
-            <Form.Field label='Add a Fun Fact' control='input' type='checkbox' />
-          </Form.Group>
           <Form.Field>
             <Button animated>
               <Button.Content visible>Add a Photo</Button.Content>
