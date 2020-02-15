@@ -1,0 +1,18 @@
+.footer {
+    background-color: #484847;
+    color: #fff;
+    padding: 20px;
+}
+.footer .row{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content:space-around;
+    padding: 10px;
+}
+.footer .column .column-title {
+    padding: 10px 0 10px 0;
+}
+.footer .social-medias {
+    margin: 5px;
+}
