@@ -6,13 +6,12 @@ const AddDestination = (props) => (
     <Modal.Header>Add a Destnation</Modal.Header>
     <Modal.Content>
       <Modal.Description>
-        <Header>Add a Destination</Header>
         <Form>
           <Form.Group widths='equal'>
             <div>
               <Input list='countries' placeholder='Choose Country...' />
               <datalist id='countries'>
-                <option value='Agentina' />
+                <option value='Argentina' />
                 <option value='Andorra' />
                 <option value='Australia' />
               </datalist>
@@ -35,14 +34,15 @@ const AddDestination = (props) => (
           <Form.Group grouped>
             <Form.Field label='Add a Fun Fact' control='input' type='checkbox' />
           </Form.Group>
-          <Form.Field label='Add Notes' control='textarea' rows='3' />
           <Form.Field>
-          <Button animated>
+            <Button animated>
               <Button.Content visible>Add a Photo</Button.Content>
               <Button.Content hidden>
                 <Icon name='photo' />
               </Button.Content>
-            </Button>          </Form.Field>
+            </Button>
+          </Form.Field>
+          <Form.Field label='Add Notes' control='textarea' rows='3' />
           <Form.Field>
             <Button animated>
               <Button.Content visible>Submit</Button.Content>
