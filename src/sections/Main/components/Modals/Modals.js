@@ -1,7 +1,5 @@
 import React from 'react'
-import { Button, Header, Image, Modal, Form, Input, Icon } from 'semantic-ui-react'
-
-
+import { Button, Header, Modal, Form, Input, Icon } from 'semantic-ui-react'
 
 const AddDestination = (props) => (
   <Modal trigger={props.triggerButton}>
@@ -14,9 +12,9 @@ const AddDestination = (props) => (
             <div>
               <Input list='countries' placeholder='Choose Country...' />
               <datalist id='countries'>
-                <option value='English' />
-                <option value='Chinese' />
-                <option value='Dutch' />
+                <option value='Agentina' />
+                <option value='Andorra' />
+                <option value='Australia' />
               </datalist>
             </div>
           </Form.Group>
@@ -42,7 +40,7 @@ const AddDestination = (props) => (
           <Button animated>
               <Button.Content visible>Add a Photo</Button.Content>
               <Button.Content hidden>
-                <Icon name='arrow right' />
+                <Icon name='photo' />
               </Button.Content>
             </Button>          </Form.Field>
           <Form.Field>

@@ -3,7 +3,7 @@ import Map from './components/Map';
 import List from './components/List';
 import Summary from './components/Summary';
 import ToggleButtons from './components/ToggleButtons';
-import { Container } from './Main.styles';
+import { Container, Content } from './Main.styles';
 
 function Main() {
   const [items, setItems] = useState([]);
@@ -26,9 +26,11 @@ function Main() {
   return (
     <Container>
       <ToggleButtons view={view} setView={setView} />
-      {view === 'map' && <Map />}
-      {view === 'list' && <List />}
-      {view === 'summary' && <Summary />}
+      <Content>
+        {view === 'map' && <Map />}
+        {view === 'list' && <List />}
+        {view === 'summary' && <Summary />}
+      </Content>
       {/* <select>
         {items.map(item => (
           <option key={item.id}>
