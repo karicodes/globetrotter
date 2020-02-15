@@ -1,13 +1,25 @@
 import React from 'react';
-import { Container, Button } from './ToggleButtons.styles';
+import { Container } from './ToggleButtons.styles';
+import { Button } from 'semantic-ui-react';
+import AddDestination from '../Modals';
 
-function ToggleButtons() {
+
+export const buttonStyles = {
+  width: '100px',
+  height: '100px',
+  fontSize: '40px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContents: 'center'
+}
+
+function ToggleButtons(props) {
   return (
     <Container>
-      <Button>+</Button>
-      <Button>Map View</Button>
-      <Button>List View</Button>
-      <Button>Stats Summary</Button>
+      <AddDestination triggerButton={<Button style={buttonStyles} icon='add' />} />
+      <Button style={buttonStyles} icon='map' onClick={() => props.setView('map')} />
+      <Button style={buttonStyles} icon='table' onClick={() => props.setView('list')} />
+      <Button style={buttonStyles} icon='unordered list' onClick={() => props.setView('summary')} />
     </Container>
   )
 }
