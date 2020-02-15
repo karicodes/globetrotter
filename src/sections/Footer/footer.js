@@ -29,8 +29,8 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <span>Print</span>
-                    <span>Download PDF</span>
+                    <button className="btn-footer" onClick={() => window.print()}>Print</button>
+                    <button className="btn-footer">Download PDF</button>
                 </div>
                 <hr/>
                 <div className="row">

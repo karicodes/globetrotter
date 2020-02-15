@@ -16,3 +16,13 @@
 .footer .social-medias {
     margin: 5px;
 }
+.footer .btn-footer {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.footer .btn-footer:active, .footer .btn-footer:hover, .footer .btn-footer:focus {
+    color: #ccc;
+    outline: none;
+}
