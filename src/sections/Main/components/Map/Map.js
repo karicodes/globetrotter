@@ -6,10 +6,10 @@ import mapToken from './token';
 export default function Map() {
   const [viewport, setViewport] = useState({
     width: "80vw",
-    height: "80vh",
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 1.2
+    height: "95vh",
+    latitude: 51.4934,
+    longitude: -0.000500,
+    zoom: 1
   })
 
   return (
