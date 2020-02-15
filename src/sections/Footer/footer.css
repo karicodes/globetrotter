@@ -26,3 +26,24 @@
     color: #ccc;
     outline: none;
 }
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+.footer .icon {
+    cursor: pointer;
+}
+
+.footer .icon:active, .footer .icon:hover, .footer .icon:focus {
+    color: #ccc;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}

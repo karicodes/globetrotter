@@ -4,16 +4,22 @@ import "./footer.css";
 class Footer extends Component {
     render() {
         return (
-            <footer className="footer">
+            <footer className="footer no-print">
                 <div className="row">
                     <div className="column">
                         <div className="column-title">
                             Share on:
                         </div>
                         <div className="social-media">
-                            <span className="social-medias">Instagram</span>
-                            <span className="social-medias">Facebook</span>
-                            <span className="social-medias">Twitter</span>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-instagram"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-twitter"></i>
+                            </a>
                         </div>
                     </div>
                     <div className="column">
@@ -21,17 +27,31 @@ class Footer extends Component {
                             Follow us on:
                         </div>
                         <div className="social-media">
-                            <span className="social-medias">Instagram</span>
-                            <span className="social-medias">Facebook</span>
-                            <span className="social-medias">Twitter</span>
-                            <span className="social-medias">Email</span>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-instagram"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <i className="icon-twitter"></i>
+                            </a>
+                            <a href="https://gmail.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                            <i className="icon icon-envelop"></i>
+                                &nbsp;Email
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div className="row">
-                    <button className="btn-footer" onClick={() => window.print()}>Print</button>
-                    <button className="btn-footer">Download PDF</button>
+                    <button className="btn-footer " onClick={() => window.print()}>
+                        <i className="icon icon-printer"></i>
+                        &nbsp;Print</button>
+                    <button className="btn-footer" onClick={() => window.print()}>
+                        <i className="icon icon-download"></i>
+                        &nbsp;Download PDF</button>
                 </div>
+                
                 <hr/>
                 <div className="row">
                     © 2020 Globe Trotter
