@@ -4,7 +4,8 @@ import List from './components/List';
 import Summary from './components/Summary';
 import ToggleButtons from './components/ToggleButtons';
 import { Container, Content } from './Main.styles';
-import { CountryProvider } from './CountryContext';
+import { CountryProvider } from './Contexts/CountryContext';
+import { MapProvider } from './Contexts/MapContext';
 
 function Main() {
 
@@ -12,14 +13,16 @@ function Main() {
 
   return (
     <CountryProvider>
-      <Container>
-        <ToggleButtons view={view} setView={setView} />
-        <Content>
-          {view === 'map' && <Map />}
-          {view === 'list' && <List />}
-          {view === 'summary' && <Summary />}
-        </Content>
-      </Container>
+      <MapProvider>
+        <Container>
+          <ToggleButtons view={view} setView={setView} />
+          <Content>
+            {view === 'map' && <Map />}
+            {view === 'list' && <List />}
+            {view === 'summary' && <Summary />}
+          </Content>
+        </Container>
+      </MapProvider>
     </CountryProvider>
 
   );

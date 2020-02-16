@@ -1,9 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Button, Modal, Form, Input, Icon } from 'semantic-ui-react';
-import { CountryContext } from '../../CountryContext';
+import { CountryContext } from '../../Contexts/CountryContext';
+import { MapContext } from '../../Contexts/MapContext';
 
 function AddDestination(props) {
-  const [countries, setCountries] = useContext(CountryContext)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [countries, setCountries] = useContext(CountryContext);
+
+  const mapContext = useContext(MapContext);
+  const [visitedCountries, setVisitedCountries] = mapContext.visited;
+  const [bucketlistCountries, setBucketlistCountries] = mapContext.bucketlist;
+
 
   const [country, setCountry] = useState('');
   const [isHaveBeenThere, setIsHaveBeenThere] = useState(true);
@@ -19,12 +27,29 @@ function AddDestination(props) {
   }
 
   function handleSubmit() {
-    console.log(`adding the following country to map: ${country}`)
+    if (isHaveBeenThere) {
+      setVisitedCountries(visitedCountries.concat({
+        country: country,
+        notes: notes
+      })
+      )
+    } else {
+      setBucketlistCountries(bucketlistCountries.concat({
+        country: country,
+        notes: notes
+      }))
+    }
+
+    setCountry('');
+    setIsHaveBeenThere(true);
+    setPhoto(null);
+    setNotes('');
+    setIsModalOpen(false);
   }
 
   return (
-    <Modal trigger={props.triggerButton}>
-      <Modal.Header>Add a Destnation</Modal.Header>
+    <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen} trigger={<Button onClick={() => setIsModalOpen(true)} icon='add' />}>
+      <Modal.Header>Add a Destination</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Form>
