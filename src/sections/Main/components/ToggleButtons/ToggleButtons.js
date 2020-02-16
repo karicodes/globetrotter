@@ -19,7 +19,7 @@ export function buttonStyles (bool) {
 function ToggleButtons(props) {
   return (
     <Container>
-      <AddDestination triggerButton={<Button style={buttonStyles()} icon='add' />} />
+      <AddDestination />
       <Button style={buttonStyles(props.view === 'map')} icon='map' onClick={() => props.setView('map')} />
       <Button style={buttonStyles(props.view === 'list')} icon='table' onClick={() => props.setView('list')} />
       <Button style={buttonStyles(props.view === 'summary')} icon='unordered list' onClick={() => props.setView('summary')} />
