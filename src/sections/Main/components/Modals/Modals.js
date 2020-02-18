@@ -7,8 +7,8 @@ import { MapContext } from '../../Contexts/MapContext';
 function AddDestination(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [countries, setCountries] = useContext(CountryContext);
-  console.log(countries);
+  const [countries] = useContext(CountryContext);
+
   const mapContext = useContext(MapContext);
   const [visitedCountries, setVisitedCountries] = mapContext.visited;
   const [bucketlistCountries, setBucketlistCountries] = mapContext.bucketlist;

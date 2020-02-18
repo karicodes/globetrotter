@@ -1,23 +1,21 @@
-// import React, {PureComponent} from 'react';
+import React, {PureComponent} from 'react';
+import { Container } from './Map.styles';
 
-// export default class CityInfo extends PureComponent {
-//   render() {
-//     const {info} = this.props;
-//     const displayName = `${info.city}, ${info.state}`;
+export default class CityInfo extends PureComponent {
+  render() {
+    const {info} = this.props;
+    const displayName = `${info.name}, ${info.region}`;
 
-//     return (
-//       <div>
-//         <div>
-//           {displayName} |{' '}
-//           <a
-//             target="_new"
-//             href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${displayName}`}
-//           >
-//             Wikipedia
-//           </a>
-//         </div>
-//         <img width={240} src={info.image} />
-//       </div>
-//     );
-//   }
-// }
+    return (
+      <div>
+        <Container>
+          <span>
+          {displayName}
+          </span>
+          <img src={info.flag} width={20} alt='flag' />
+        </Container>
+        <img width={240} src={info.image} />
+      </div>
+    );
+  }
+}

@@ -1,12 +1,9 @@
 
-import React, {Component} from 'react';
-import MapGL, {Popup, NavigationControl, FullscreenControl, ScaleControl} from 'react-map-gl';
-
-import ControlPanel from './ControlPanel';
+import React, { Component, useContext, useState } from 'react';
+import MapGL, { Popup, NavigationControl, FullscreenControl, ScaleControl } from 'react-map-gl';
 import Pins from './Pins';
-import CityInfo from './CityInfo';
-
-import CITIES from './cities.json';
+import PinInfo from './PinInfo';
+import { MapContext } from '../../Contexts/MapContext';
 
 const fullscreenControlStyle = {
   position: 'absolute',
@@ -29,76 +26,72 @@ const scaleControlStyle = {
   padding: '10px'
 };
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewport: {
-        latitude: 37.785164,
-        longitude: -100,
-        zoom: 3.5,
-        bearing: 0,
-        pitch: 0
-      },
-      popupInfo: null
-    };
-  }
+export default function Map() {
+  const [viewport, setViewport] = useState({
+    latitude: 51.4934,
+    longitude: -0.000500,
+    zoom: 1,
+    bearing: 0,
+    pitch: 0,
+    width: "100%",
+    height: "100%",
+  })
 
-  _updateViewport = viewport => {
-    this.setState({viewport});
+  const [popupInfo, setPopUpInfo] = useState(null);
+
+  
+  const _onClickMarker = country => {
+    setPopUpInfo(country)
   };
 
-  _onClickMarker = city => {
-    this.setState({popupInfo: city});
-  };
 
-  _renderPopup() {
-    const {popupInfo} = this.state;
+  const mapContext = useContext(MapContext);
 
-    return (
-      popupInfo && (
+  const [visitedCountries] = mapContext.visited;
+
+  return (
+    <MapGL
+      {...viewport}
+      mapStyle="mapbox://styles/mapbox/dark-v9"
+      onViewportChange={viewport => {
+        setViewport(viewport)
+      }}
+      mapboxApiAccessToken={process.env.REACT_APP_MAP_TOKEN}
+    >
+
+      <Pins data={visitedCountries} onClick={_onClickMarker} />
+
+      {popupInfo && (
         <Popup
           tipSize={5}
           anchor="top"
-          longitude={popupInfo.longitude}
-          latitude={popupInfo.latitude}
+          longitude={popupInfo.latlng[1]}
+          latitude={popupInfo.latlng[0]}
           closeOnClick={false}
-          onClose={() => this.setState({popupInfo: null})}
+          onClose={() => setPopUpInfo(null)}
         >
-          <CityInfo info={popupInfo} />
+          <PinInfo info={popupInfo} />
         </Popup>
-      )
-    );
-  }
+      )}
 
-  render() {
-    const {viewport} = this.state;
-
-    return (
-      <MapGL
-        {...viewport}
-        width="100%"
-        height="100%"
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-        onViewportChange={this._updateViewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAP_TOKEN}
-      >
-        <Pins data={CITIES} onClick={this._onClickMarker} />
-
-        {this._renderPopup()}
-
-        <div style={fullscreenControlStyle}>
-          <FullscreenControl />
-        </div>
-        <div style={navStyle}>
-          <NavigationControl />
-        </div>
-        <div style={scaleControlStyle}>
-          <ScaleControl />
-        </div>
-
-        {/* <ControlPanel containerComponent={this.props.containerComponent} /> */}
-      </MapGL>
-    );
-  }
+      <div style={fullscreenControlStyle}>
+        <FullscreenControl />
+      </div>
+      <div style={navStyle}>
+        <NavigationControl />
+      </div>
+      <div style={scaleControlStyle}>
+        <ScaleControl />
+      </div>
+    </MapGL>
+  );
 }
+
+
+
+
+
+
+
+
+
