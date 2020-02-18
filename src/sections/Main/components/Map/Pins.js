@@ -10,7 +10,7 @@ const SIZE = 20;
 // Important for perf: the markers never change, avoid rerender when the map viewport changes
 export default class Pins extends PureComponent {
   render() {
-    const { data, onClick } = this.props;
+    const { data, onClick, color } = this.props;
 
     return data.map((country, index) => (
       <Marker key={`marker-${index}`} longitude={country.country.latlng[1]} latitude={country.country.latlng[0]}>
@@ -20,7 +20,7 @@ export default class Pins extends PureComponent {
           viewBox="0 0 24 24"
           style={{
             cursor: 'pointer',
-            fill: '#d00',
+            fill: color,
             stroke: 'none',
             transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
           }}

@@ -48,6 +48,7 @@ export default function Map() {
   const mapContext = useContext(MapContext);
 
   const [visitedCountries] = mapContext.visited;
+  const [bucketlistCountries] = mapContext.bucketlist;
 
   return (
     <MapGL
@@ -59,7 +60,8 @@ export default function Map() {
       mapboxApiAccessToken={process.env.REACT_APP_MAP_TOKEN}
     >
 
-      <Pins data={visitedCountries} onClick={_onClickMarker} />
+      <Pins color='limegreen' data={visitedCountries} onClick={_onClickMarker} />
+      <Pins color='dodgerblue' data={bucketlistCountries} onClick={_onClickMarker} />
 
       {popupInfo && (
         <Popup
