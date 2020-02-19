@@ -24,7 +24,7 @@ export default class Pins extends PureComponent {
             stroke: 'none',
             transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
           }}
-          onClick={() => onClick(country.country)}
+          onClick={() => onClick(country)}
         >
           <path d={ICON} />
         </svg>

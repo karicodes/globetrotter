@@ -58,22 +58,31 @@ function AddDestination(props) {
   const styles = {
     container: base => ({
       ...base,
-      flex: 1,
       width: 400,
       zIndex: 99999
     })
   };
 
   return (
-    <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen} trigger={<Button onClick={() => setIsModalOpen(true)} icon='add' />}>
+    <Modal
+      onClose={() => setIsModalOpen(false)}
+      open={isModalOpen}
+      trigger={<Button
+        onClick={() => setIsModalOpen(true)}
+        icon='add'
+      />}>
       <Modal.Header>Add a Destination</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Form>
             <Form.Group widths='equal'>
-              <div>
-                <Select styles={styles} options={selectOptions} onChange={handleUpdateCountry} list='countries' placeholder='Choose Country...' />
-              </div>
+              <Select
+                styles={styles}
+                options={selectOptions}
+                onChange={handleUpdateCountry}
+                list='countries'
+                placeholder='Choose Country...'
+              />
             </Form.Group>
             <Form.Group grouped>
               <Form.Field
@@ -101,9 +110,15 @@ function AddDestination(props) {
                 </Button.Content>
               </Button>
             </Form.Field>
-            <Form.Field value={notes} onChange={handleUpdateNotes} label='Add Notes' control='textarea' rows='3' />
+            <Form.Field
+              value={notes}
+              onChange={handleUpdateNotes}
+              label='Add Notes'
+              control='textarea'
+              rows='3'
+            />
             <Form.Field>
-              <Button onClick={handleSubmit} animated>
+              <Button disabled={!country} onClick={handleSubmit} animated>
                 <Button.Content visible>Submit</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right' />

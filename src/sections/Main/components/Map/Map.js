@@ -39,11 +39,9 @@ export default function Map() {
 
   const [popupInfo, setPopUpInfo] = useState(null);
 
-  
   const _onClickMarker = country => {
     setPopUpInfo(country)
   };
-
 
   const mapContext = useContext(MapContext);
 
@@ -67,8 +65,8 @@ export default function Map() {
         <Popup
           tipSize={5}
           anchor="top"
-          longitude={popupInfo.latlng[1]}
-          latitude={popupInfo.latlng[0]}
+          longitude={popupInfo.country.latlng[1]}
+          latitude={popupInfo.country.latlng[0]}
           closeOnClick={false}
           onClose={() => setPopUpInfo(null)}
         >
