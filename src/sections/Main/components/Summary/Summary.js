@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from './Summary.styles';
 import { List } from 'semantic-ui-react';
+import { MapContext } from '../../Contexts/MapContext';
+import { CountryContext } from '../../Contexts/CountryContext';
 
 
 export default function Summary() {
+  const mapContext = useContext(MapContext);
+  const [countries] = useContext(CountryContext);
+
+
+  const [visitedCountries] = mapContext.visited;
+
   return (
     <Container>
       <h1>Summary</h1>
@@ -11,13 +19,13 @@ export default function Summary() {
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been to X countries out of 197</List.Description>
+            <List.Description as='p'>You have been to <span>{visitedCountries.length}</span> countries out of <span>{countries.length}</span> </List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been to X continents out of 5</List.Description>
+            <List.Description as='p'>You have been to <span>{console.log(visitedCountries.map(country => country.region))}</span> continents out of 5</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
