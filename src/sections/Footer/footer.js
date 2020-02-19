@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./footer.css";
+import { Icon } from 'semantic-ui-react';
 
 class Footer extends Component {
     render() {
@@ -12,13 +13,13 @@ class Footer extends Component {
                         </div>
                         <div className="social-media">
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-instagram"></i>
+                                <Icon name='instagram' />
                             </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-facebook"></i>
+                            <a href="https://www.facebook.com/Globe-Trotter-110878673833129/" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <Icon name='facebook' />
                             </a>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-twitter"></i>
+                                <Icon name='twitter' />  
                             </a>
                         </div>
                     </div>
@@ -28,16 +29,16 @@ class Footer extends Component {
                         </div>
                         <div className="social-media">
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-instagram"></i>
+                                <Icon name='instagram' />
                             </a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-facebook"></i>
+                            <a href="https://www.facebook.com/Globe-Trotter-110878673833129/" target="_blank" rel="noopener noreferrer" className="social-medias icon">
+                                <Icon name='facebook' />
                             </a>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                                <i className="icon-twitter"></i>
+                                <Icon name='twitter' />
                             </a>
                             <a href="https://gmail.com" target="_blank" rel="noopener noreferrer" className="social-medias icon">
-                            <i className="icon icon-envelop"></i>
+                                <Icon name='envelope' />
                                 &nbsp;Email
                             </a>
                         </div>
