@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { Component, useContext, useState } from 'react';
+import Select from 'react-select';
 import { Button, Modal, Form, Input, Icon } from 'semantic-ui-react';
 import { CountryContext } from '../../Contexts/CountryContext';
 import { MapContext } from '../../Contexts/MapContext';
@@ -6,20 +7,20 @@ import { MapContext } from '../../Contexts/MapContext';
 function AddDestination(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [countries, setCountries] = useContext(CountryContext);
+  const [countries] = useContext(CountryContext);
 
   const mapContext = useContext(MapContext);
   const [visitedCountries, setVisitedCountries] = mapContext.visited;
   const [bucketlistCountries, setBucketlistCountries] = mapContext.bucketlist;
 
 
-  const [country, setCountry] = useState('');
+  const [country, setCountry] = useState(null);
   const [isHaveBeenThere, setIsHaveBeenThere] = useState(true);
   const [photo, setPhoto] = useState(null);
   const [notes, setNotes] = useState('');
 
   function handleUpdateCountry(e) {
-    setCountry(e.target.value)
+    setCountry(e.value)
   }
 
   function handleUpdateNotes(e) {
@@ -47,23 +48,41 @@ function AddDestination(props) {
     setIsModalOpen(false);
   }
 
+  const selectOptions = countries.map(country => {
+    return {
+      value: country,
+      label: country.name
+    }
+  })
+
+  const styles = {
+    container: base => ({
+      ...base,
+      width: 400,
+      zIndex: 99999
+    })
+  };
+
   return (
-    <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen} trigger={<Button onClick={() => setIsModalOpen(true)} icon='add' />}>
+    <Modal
+      onClose={() => setIsModalOpen(false)}
+      open={isModalOpen}
+      trigger={<Button
+        onClick={() => setIsModalOpen(true)}
+        icon='add'
+      />}>
       <Modal.Header>Add a Destination</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Form>
             <Form.Group widths='equal'>
-              <div>
-                <Input value={country} onChange={handleUpdateCountry} list='countries' placeholder='Choose Country...' />
-                <datalist id='countries'>
-                  {countries.map(item => (
-                    <option key={item.name}>
-                      {item.name}
-                    </option>
-                  ))}
-                </datalist>
-              </div>
+              <Select
+                styles={styles}
+                options={selectOptions}
+                onChange={handleUpdateCountry}
+                list='countries'
+                placeholder='Choose Country...'
+              />
             </Form.Group>
             <Form.Group grouped>
               <Form.Field
@@ -91,9 +110,15 @@ function AddDestination(props) {
                 </Button.Content>
               </Button>
             </Form.Field>
-            <Form.Field value={notes} onChange={handleUpdateNotes} label='Add Notes' control='textarea' rows='3' />
+            <Form.Field
+              value={notes}
+              onChange={handleUpdateNotes}
+              label='Add Notes'
+              control='textarea'
+              rows='3'
+            />
             <Form.Field>
-              <Button onClick={handleSubmit} animated>
+              <Button disabled={!country} onClick={handleSubmit} animated>
                 <Button.Content visible>Submit</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right' />
