@@ -6,27 +6,21 @@ export const CustomLogo = styled.div`
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 35%x;
-    margin-top: 35%;     
+    margin-top: 14%;     
     text-align: center; 
     font-family: 'Palatino Linotype';
-    font-size: 8rem;
-    color: #eee6eb;
-    color:  #fffefc;
-    text-shadow: -2px 0 #ffd480, 0 1px #ffd480, 1px 0 #ffd480, 0 -1px #ffd480;
+    font-size: 7.5rem;
+    color:   #0a0f0f;
+    text-shadow: -2px 0 #00b3b3, 0 1px #00b3b3, 1px 0 #00b3b3, 0 -1px #00b3b3;
+    z-index: 2;
 `
 
 export const FirstInitial = styled.span`
-    font-size: 13rem;
+    font-size: 11rem;
+    z-index: 2;
 `
 export const SecondInitial = styled.span`
-    font-size: 13rem;
+    font-size: 11rem;
+    z-index: 2;
 `
 
-export const FirstImage = styled.span`
-    background-image: url("../Images/A.png");
-    width: 10%;
-`
-export const SecondImage = styled.span`
-    background-image: url("../Images/B.png");
-    width: 10%;
-`

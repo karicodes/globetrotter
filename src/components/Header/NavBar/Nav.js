@@ -1,19 +1,19 @@
 import React from 'react';
 import { CustomNav } from "./Nav.styles.js";
-// import bulletpoint1 from "../Images/Abullet.jpg";
-import bulletpoint2 from "../Images/Bbullet.jpg";
+import WelcomeBack from '../Welcome/Welcome.js';
+
 
 class Nav extends React.Component {
     render() {
         return (
             <CustomNav>
-                
-                <table>
-                    <tr><img src={bulletpoint2}  alt="bulletpoint" margin= "20px" border= "0px" padding="10px" width="10px" height="10px"/>  <a href="#home">  Home  </a></tr>
-                    <tr><img src={bulletpoint2}  alt="bulletpoint" width="10px" height="10px"/>  <a href="#map">  Your Map  </a></tr>
-                    <tr><img src={bulletpoint2}  alt="bulletpoint" width="10px" height="10px"/>  <a href="https://www.facebook.com/GlobeTrotter-104230741165881/?view_public_for=104230741165881">  Follow Us  </a></tr>
-                </table>
-                
+                    <span>
+                        <WelcomeBack/>
+                    </span>
+                    <a href="#home">  HOME  </a>
+                    <a href="#map">  YOUR MAP  </a>
+                    <a href="https://www.facebook.com/GlobeTrotter-104230741165881/?view_public_for=104230741165881">  FOLLOW US  </a>
+                    <a href="#logout" text-align="right">  LOG OUT </a>
             </CustomNav>
         )
     }
@@ -21,4 +21,4 @@ class Nav extends React.Component {
 
         
 export default Nav;
-// margin-left= "3%" margin-right= "3%" margin-bottom= "20px"
+

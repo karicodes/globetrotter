@@ -6,7 +6,7 @@ class Welcome extends React.Component {
         return (
             <span>
                 <WelcomeBack>
-                    Welcome back!
+                    Welcome back, User!
                 </WelcomeBack>
             </span>
         )

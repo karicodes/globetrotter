@@ -1,37 +1,28 @@
 import styled from 'styled-components';
-// import background1 from "./Images/background1.jpg";
 
-export const CustomHeader = styled.div`
-     background-image: url("./Images/background1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50%;
-  margin-top: 0%;
-  margin-left: 0%;
-  margin-right: 0%;
-  margin-bottom: 0%;
-  padding-top: 20px;
-/*   
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-bottom: 0%;
-    margin-top: 0%;     
-    background-image: url("./Images/background1.jpg");
-    background-repeat: no-repeat;    
-    /* background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 140%; */
-    background-position: center center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-    margin-top: 0%;
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-bottom: 0%;
-    padding-top: 0px; */
+
+export const Container = styled.div`
+    height: auto;
+    width: 100%;
+    margin: 0;
+    min-height: 100%; 
+    background-image:  linear-gradient(rgb(1,23,0.8,0), rgb(1,23,0.8,0), rgb(1,23,0.8,0), rgb(1,23,0.8,1)), url('https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=994&q=80');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    padding: 0;
+    overflow-x: hidden; 
+
 `
 
+export const CustomImg = styled.img`
+    background-position: 100% 100%;
+    height: auto;
+    transform: rotate(180deg);
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+    background-size: 100%;
+    background-attachment: fixed;
+    
+`

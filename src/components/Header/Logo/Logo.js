@@ -2,8 +2,8 @@ import React from 'react';
 import { CustomLogo } from "./Logo.styles.js";
 import { FirstInitial } from "./Logo.styles.js";
 import { SecondInitial } from "./Logo.styles.js";
-import imageFile1 from "../Images/A.png";
-import imageFile2 from "../Images/B.png";
+import imageFile1 from "../Images/pinB.png";
+import imageFile2 from "../Images/pinA.png";
 
 
 class Logo extends React.Component {
@@ -14,11 +14,11 @@ class Logo extends React.Component {
                     <p>
                         <FirstInitial>G</FirstInitial> 
                         L
-                        <img src={imageFile1}  alt="pin" width="64px" height="90px"/>
+                        <img src={imageFile1} hspace="0" alt="pin" width="90px" height="95px"/>
                         BE
                         <SecondInitial>T</SecondInitial>
                         R
-                        <img src={imageFile2}  alt="pin" width="64px" height="90px"/>
+                        <img src={imageFile2} hspace="0" alt="pin" width="90px" height="95px"/>
                         TTER
                     </p>
                 </div>
@@ -30,4 +30,5 @@ class Logo extends React.Component {
 
         
 export default Logo;
+
 
