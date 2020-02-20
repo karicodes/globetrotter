@@ -4,13 +4,22 @@ import { List } from 'semantic-ui-react';
 import { MapContext } from '../../Contexts/MapContext';
 import { CountryContext } from '../../Contexts/CountryContext';
 
+function removeDupes(arr) {
+  return arr.filter((val, idx) => arr.indexOf(val) === idx);
+}
 
 export default function Summary() {
   const mapContext = useContext(MapContext);
   const [countries] = useContext(CountryContext);
 
-
   const [visitedCountries] = mapContext.visited;
+
+  const regions = visitedCountries.map(country => country.country.region);
+
+  const languages = visitedCountries.reduce((acc, cv) => {
+    const langs = cv.country.languages.map(lang => lang.name)
+      return acc.concat(langs)
+  }, [])
 
   return (
     <Container>
@@ -25,13 +34,13 @@ export default function Summary() {
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been to <span>{console.log(visitedCountries.map(country => country.region))}</span> continents out of 5</List.Description>
+            <List.Description as='p'>You have been to <span>{removeDupes(regions).length}</span> continents out of 5</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been exposed to X languages out of 6500</List.Description>
+            <List.Description as='p'>You have been exposed to {removeDupes(languages).length} languages out of 6500</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
