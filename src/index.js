@@ -1,15 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './components/Map/index';
-import Header from './components/Header/Header';
-
-function App() {
-  return (
-    <div>
-      <Header />
-      <Map />
-    </div>
-  )
-};
+import App from './App';
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
