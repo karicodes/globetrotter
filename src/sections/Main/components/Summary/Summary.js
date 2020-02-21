@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { Container, Title } from './Summary.styles';
+import { Container, Title, Message, Body } from './Summary.styles';
 import { List } from 'semantic-ui-react';
 import { MapContext } from '../../Contexts/MapContext';
 import { CountryContext } from '../../Contexts/CountryContext';
+import Co2Message from './Co2Message';
 
 function removeDupes(arr) {
   return arr.filter((val, idx) => arr.indexOf(val) === idx);
@@ -18,12 +19,12 @@ export default function Summary() {
 
   const languagesUsed = visitedCountries.reduce((acc, cv) => {
     const languages = cv.country.languages.map(lang => lang.name)
-      return acc.concat(languages)
+    return acc.concat(languages)
   }, []);
 
   const currenciesUsed = visitedCountries.reduce((acc, cv) => {
     const currencies = cv.country.currencies.map(currency => currency.name)
-      return acc.concat(currencies)
+    return acc.concat(currencies)
   }, []);
 
   const timezonesUsed = visitedCountries.reduce((acc, cv) => {
@@ -34,38 +35,43 @@ export default function Summary() {
   return (
     <Container>
       <Title>Summary</Title>
-      <List divided relaxed>
-        <List.Item>
-          <List.Icon name='globe' size='large' verticalAlign='middle' />
-          <List.Content>
-            <List.Description as='p'>You have been to <span>{visitedCountries.length}</span> countries out of <span>{countries.length}</span> </List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name='globe' size='large' verticalAlign='middle' />
-          <List.Content>
-            <List.Description as='p'>You have been to <span>{removeDupes(regions).length}</span> continents out of 5</List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name='globe' size='large' verticalAlign='middle' />
-          <List.Content>
-            <List.Description as='p'>You have been exposed to {removeDupes(languagesUsed).length} languages out of 6500</List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name='globe' size='large' verticalAlign='middle' />
-          <List.Content>
-            <List.Description as='p'>You have used {removeDupes(currenciesUsed).length} currencies out of 180</List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name='globe' size='large' verticalAlign='middle' />
-          <List.Content>
-            <List.Description as='p'>You have been in {removeDupes(timezonesUsed).length} time zones out of 24</List.Description>
-          </List.Content>
-        </List.Item>
-      </List>
+      <Body>
+        <List divided relaxed>
+          <List.Item>
+            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Content>
+              <List.Description as='p'>You have been to <span>{visitedCountries.length}</span> countries out of <span>{countries.length}</span> </List.Description>
+            </List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Content>
+              <List.Description as='p'>You have been to <span>{removeDupes(regions).length}</span> continents out of 5</List.Description>
+            </List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Content>
+              <List.Description as='p'>You have been exposed to {removeDupes(languagesUsed).length} languages out of 6500</List.Description>
+            </List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Content>
+              <List.Description as='p'>You have used {removeDupes(currenciesUsed).length} currencies out of 180</List.Description>
+            </List.Content>
+          </List.Item>
+          <List.Item>
+            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Content>
+              <List.Description as='p'>You have been in {removeDupes(timezonesUsed).length} time zones out of 24</List.Description>
+            </List.Content>
+          </List.Item>
+        </List>
+      </Body>
+      <Message>
+        <Co2Message />
+      </Message>
     </Container>
   )
 }
