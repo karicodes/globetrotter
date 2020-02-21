@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container } from './Summary.styles';
+import { Container, Title } from './Summary.styles';
 import { List } from 'semantic-ui-react';
 import { MapContext } from '../../Contexts/MapContext';
 import { CountryContext } from '../../Contexts/CountryContext';
@@ -16,14 +16,24 @@ export default function Summary() {
 
   const regions = visitedCountries.map(country => country.country.region);
 
-  const languages = visitedCountries.reduce((acc, cv) => {
-    const langs = cv.country.languages.map(lang => lang.name)
-      return acc.concat(langs)
+  const languagesUsed = visitedCountries.reduce((acc, cv) => {
+    const languages = cv.country.languages.map(lang => lang.name)
+      return acc.concat(languages)
+  }, []);
+
+  const currenciesUsed = visitedCountries.reduce((acc, cv) => {
+    const currencies = cv.country.currencies.map(currency => currency.name)
+      return acc.concat(currencies)
+  }, []);
+
+  const timezonesUsed = visitedCountries.reduce((acc, cv) => {
+    const timezones = cv.country.timezones;
+    return acc.concat(timezones)
   }, [])
 
   return (
     <Container>
-      <h1>Summary</h1>
+      <Title>Summary</Title>
       <List divided relaxed>
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
@@ -40,19 +50,19 @@ export default function Summary() {
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been exposed to {removeDupes(languages).length} languages out of 6500</List.Description>
+            <List.Description as='p'>You have been exposed to {removeDupes(languagesUsed).length} languages out of 6500</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have used X currencies out of 180</List.Description>
+            <List.Description as='p'>You have used {removeDupes(currenciesUsed).length} currencies out of 180</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Icon name='globe' size='large' verticalAlign='middle' />
           <List.Content>
-            <List.Description as='p'>You have been in X time zones out of 24</List.Description>
+            <List.Description as='p'>You have been in {removeDupes(timezonesUsed).length} time zones out of 24</List.Description>
           </List.Content>
         </List.Item>
       </List>
