@@ -1,6 +1,6 @@
 import React from 'react';
-import { CustomNav } from "./Nav.styles.js";
-import WelcomeBack from '../Welcome/Welcome.js';
+import { CustomNav } from "./Nav.styles";
+import WelcomeBack from '../Welcome/Welcome';
 
 
 class Nav extends React.Component {
