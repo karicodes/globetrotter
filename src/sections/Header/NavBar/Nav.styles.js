@@ -19,7 +19,7 @@ export const CustomNav = styled.div`
     padding: 15px;
     width: 100%;
     height: auto;
-    background: #020218;
+    background: #202020;
     
     a {
         line-height: 20px; 

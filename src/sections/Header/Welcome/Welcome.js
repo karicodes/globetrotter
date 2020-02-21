@@ -1,12 +1,12 @@
 import React from 'react';
-import { WelcomeBack } from "./Welcome.styles.js";
+import { WelcomeBack } from "./Welcome.styles";
 
 class Welcome extends React.Component {
     render() {
         return (
             <span>
                 <WelcomeBack>
-                    Welcome back, User!
+                    Welcome back!
                 </WelcomeBack>
             </span>
         )

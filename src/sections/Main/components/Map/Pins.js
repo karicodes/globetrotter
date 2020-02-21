@@ -14,7 +14,6 @@ export default class Pins extends PureComponent {
 
     return data.map((country, index) => (
       <Marker key={`marker-${index}`} longitude={country.country.latlng[1]} latitude={country.country.latlng[0]}>
-        {console.log(country.country)}
         <svg
           height={SIZE}
           viewBox="0 0 24 24"
