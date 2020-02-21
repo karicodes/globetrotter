@@ -6,6 +6,7 @@ export const Container = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 0px;
+  padding-top: 10px;
 `
 
 export const LeftList = styled.div`

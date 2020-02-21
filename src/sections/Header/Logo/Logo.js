@@ -1,7 +1,7 @@
 import React from 'react';
-import { CustomLogo } from "./Logo.styles.js";
-import { FirstInitial } from "./Logo.styles.js";
-import { SecondInitial } from "./Logo.styles.js";
+import { CustomLogo } from "./Logo.styles";
+import { FirstInitial } from "./Logo.styles";
+import { SecondInitial } from "./Logo.styles";
 import imageFile1 from "../Images/pinB.png";
 import imageFile2 from "../Images/pinA.png";
 
