@@ -1,0 +1,30 @@
+.letter-o {
+    width: 90px;
+    height: 95px;
+}
+
+
+@media screen and (max-width: 1279px) {
+    .letter-o {
+        width: 70px;
+        height: 73px;
+    }
+}
+@media screen and (max-width: 975px) {
+    .letter-o {
+        width: 60px;
+        height: 63px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .letter-o {
+        width: 40px;
+        height: 42px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .letter-o {
+        width: 20px;
+        height: 21px;
+    }
+}

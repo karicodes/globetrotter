@@ -1,11 +1,23 @@
 import React, {Component} from "react";
 import "./footer.css";
 import { Icon } from 'semantic-ui-react';
+import StarfieldAnimation from 'react-starfield-animation';
 
 class Footer extends Component {
     render() {
         return (
             <footer className="footer no-print">
+                <StarfieldAnimation
+                    numberOfParticles={6000}
+                    alphaFactor={100.0}
+                    lineWidth={2.0}
+                    depth={500}
+                    style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%'
+                    }}></StarfieldAnimation>
+
                 <div className="row">
                     <div className="column">
                         <div className="column-title">
@@ -54,7 +66,7 @@ class Footer extends Component {
                 </div>
                 
                 <hr/>
-                <div className="row">
+                <div className="row bottom">
                     © 2020 Globe Trotter
                 </div>
             </footer>
