@@ -64,7 +64,7 @@ function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountr
           : <p>{notesValue}</p>
       }
 
-      <img width={240} src={image} />
+      <img width={240} alt='' src={image} />
       {
         isEditOn
           ? <Button icon='arrow right' onClick={handleUpdate} />
