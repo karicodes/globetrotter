@@ -8,8 +8,8 @@ export const Container = styled.div`
     min-height: 100%; 
     background-image:  linear-gradient(rgb(32,32,32,0), rgb(32,32,32,0.2), rgb(32,32,32,1)), url('https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=994&q=80');
     background-repeat: no-repeat;
-    background-size: 100%;
-    
+    background-size: cover;
+    position: relative;
     padding: 0;
     overflow-x: hidden; 
 
