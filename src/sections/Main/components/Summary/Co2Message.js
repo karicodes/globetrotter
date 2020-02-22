@@ -1,10 +1,9 @@
 import React from 'react'
 import { Card, Icon } from 'semantic-ui-react'
 
-const description = [
-  'Our everyday actions consume energy and produce carbon emissions, such as driving, flying and heating buildings.',
-  'Carbon offsetting is used to compensate for your emissions by funding an equivalent carbon dioxide saving elsewhere.',
-].join(' ')
+const description = 'Our everyday actions consume energy and produce carbon emissions, \
+such as driving, flying and heating buildings. Carbon offsetting is used to compensate for \
+your emissions by funding an equivalent carbon dioxide saving elsewhere.'
 
 const CardExampleExtraContent = () => (
   <Card>
