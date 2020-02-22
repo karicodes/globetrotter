@@ -38,7 +38,7 @@ export default function Summary() {
       {/* <Body> */}
         <List divided relaxed>
           <List.Item>
-            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Icon name='map signs' size='large' verticalAlign='middle' />
             <List.Content>
               <List.Description as='p'>You have been to <span>{visitedCountries.length}</span> countries out of <span>{countries.length}</span> </List.Description>
             </List.Content>
@@ -50,19 +50,19 @@ export default function Summary() {
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Icon name='language' size='large' verticalAlign='middle' />
             <List.Content>
               <List.Description as='p'>You have been exposed to {removeDupes(languagesUsed).length} languages out of 6500</List.Description>
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Icon name='gbp' size='large' verticalAlign='middle' />
             <List.Content>
               <List.Description as='p'>You have used {removeDupes(currenciesUsed).length} currencies out of 180</List.Description>
             </List.Content>
           </List.Item>
           <List.Item>
-            <List.Icon name='globe' size='large' verticalAlign='middle' />
+            <List.Icon name='clock' size='large' verticalAlign='middle' />
             <List.Content>
               <List.Description as='p'>You have been in {removeDupes(timezonesUsed).length} time zones out of 24</List.Description>
             </List.Content>
