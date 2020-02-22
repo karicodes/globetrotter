@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Title, Message, Body } from './Summary.styles';
+import { Container } from './Summary.styles';
 import { List } from 'semantic-ui-react';
 import { MapContext } from '../../Contexts/MapContext';
 import { CountryContext } from '../../Contexts/CountryContext';

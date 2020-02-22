@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import MapGL, { Popup, NavigationControl, FullscreenControl, ScaleControl } from 'react-map-gl';
 import Pins from './Pins';
 import PinInfo from './PinInfo';

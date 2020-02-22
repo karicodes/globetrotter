@@ -1,6 +1,6 @@
-import React, { Component, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Select from 'react-select';
-import { Button, Modal, Form, Input, Icon } from 'semantic-ui-react';
+import { Button, Modal, Form, Icon } from 'semantic-ui-react';
 import { CountryContext } from '../../Contexts/CountryContext';
 import { MapContext } from '../../Contexts/MapContext';
 
@@ -16,7 +16,7 @@ function AddDestination(props) {
 
   const [country, setCountry] = useState(null);
   const [isHaveBeenThere, setIsHaveBeenThere] = useState(true);
-  const [photo, setPhoto] = useState(null);
+  // const [photo, setPhoto] = useState(null);
   const [notes, setNotes] = useState('');
 
   function handleUpdateCountry(e) {
@@ -43,7 +43,7 @@ function AddDestination(props) {
 
     setCountry('');
     setIsHaveBeenThere(true);
-    setPhoto(null);
+    // setPhoto(null);
     setNotes('');
     setIsModalOpen(false);
   }
