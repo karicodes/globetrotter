@@ -6,7 +6,7 @@ such as driving, flying and heating buildings. Carbon offsetting is used to comp
 your emissions by funding an equivalent carbon dioxide saving elsewhere.'
 
 const CardExampleExtraContent = () => (
-  <Card>
+  <Card style={{marginTop: 35}}>
     <Card.Content header='Would you like to offset your Carbon Footprint?' />
     <Card.Content description={description} />
     <Card.Content extra>

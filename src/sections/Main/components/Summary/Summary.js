@@ -34,8 +34,8 @@ export default function Summary() {
 
   return (
     <Container>
-      <Title>Summary</Title>
-      <Body>
+      <h1>Summary</h1>
+      {/* <Body> */}
         <List divided relaxed>
           <List.Item>
             <List.Icon name='globe' size='large' verticalAlign='middle' />
@@ -67,11 +67,12 @@ export default function Summary() {
               <List.Description as='p'>You have been in {removeDupes(timezonesUsed).length} time zones out of 24</List.Description>
             </List.Content>
           </List.Item>
+          <Co2Message />
+
         </List>
-      </Body>
-      <Message>
-        <Co2Message />
-      </Message>
+      {/* </Body> */}
+      {/* <Message>
+      </Message> */}
     </Container>
   )
 }
