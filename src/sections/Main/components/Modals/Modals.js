@@ -103,12 +103,12 @@ function AddDestination(props) {
               />
             </Form.Group>
             <Form.Field>
-              <Button animated>
+              {/* <Button animated>
                 <Button.Content visible>Add a Photo</Button.Content>
                 <Button.Content hidden>
                   <Icon name='photo' />
                 </Button.Content>
-              </Button>
+              </Button> */}
             </Form.Field>
             <Form.Field
               value={notes}
