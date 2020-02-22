@@ -44,8 +44,8 @@ export default function Map() {
 
   const mapContext = useContext(MapContext);
 
-  const [visitedCountries] = mapContext.visited;
-  const [bucketlistCountries] = mapContext.bucketlist;
+  const [visitedCountries, setVisitedCountries] = mapContext.visited;
+  const [bucketlistCountries, setBucketlistCountries] = mapContext.bucketlist;
 
   return (
     <MapGL
@@ -60,7 +60,7 @@ export default function Map() {
       <Pins color='limegreen' data={visitedCountries} onClick={_onClickMarker} />
       <Pins color='dodgerblue' data={bucketlistCountries} onClick={_onClickMarker} />
 
-      {popupInfo && (
+      {popupInfo ? (
         <Popup
           tipSize={5}
           anchor="top"
@@ -69,9 +69,15 @@ export default function Map() {
           closeOnClick={false}
           onClose={() => setPopUpInfo(null)}
         >
-          <PinInfo info={popupInfo} />
+          <PinInfo
+            setPopUpInfo={setPopUpInfo}
+            visitedCountries={visitedCountries}
+            setVisitedCountries={setVisitedCountries}
+            bucketlistCountries={bucketlistCountries}
+            setBucketlistCountries={setBucketlistCountries}
+            info={popupInfo} />
         </Popup>
-      )}
+      ) : null}
 
       <div style={fullscreenControlStyle}>
         <FullscreenControl />
