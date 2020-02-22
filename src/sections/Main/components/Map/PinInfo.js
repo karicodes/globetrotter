@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from './Map.styles';
 import { Button } from 'semantic-ui-react';
 
-function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountries, setBucketlistCountries }) {
+function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountries, setBucketlistCountries, setPopUpInfo }) {
   const { country, notes, image } = info;
   const [isEditOn, setIsEditOn] = useState(false);
   const [notesValue, setNotesValue] = useState(notes)
@@ -39,6 +39,17 @@ function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountr
     setNotesValue(e.target.value)
   }
 
+  function handleDelete() {
+    if (visitedCountries.some(c => c.country.name === country.name)) {
+      const updatedList = visitedCountries.filter(c => c.country.name !== country.name)
+      setVisitedCountries(updatedList);
+    } else {
+      const updatedList = bucketlistCountries.filter(c => c.country.name !== country.name)
+      setBucketlistCountries(updatedList);
+    }
+    setPopUpInfo(null)
+  }
+
   return (
     <>
       <Container>
@@ -59,7 +70,7 @@ function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountr
           ? <Button icon='arrow right' onClick={handleUpdate} />
           : <Button icon='edit' onClick={handleEdit} />
       }
-      <Button icon='trash' onClick={() => { }} />
+      <Button icon='trash' onClick={handleDelete} />
     </>
   );
 }

@@ -71,6 +71,7 @@ export default function Map() {
           onClose={() => setPopUpInfo(null)}
         >
           <PinInfo
+            setPopUpInfo={setPopUpInfo}
             visitedCountries={visitedCountries}
             setVisitedCountries={setVisitedCountries}
             bucketlistCountries={bucketlistCountries}
