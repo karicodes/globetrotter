@@ -1,4 +1,3 @@
-
 import React, { Component, useContext, useState } from 'react';
 import MapGL, { Popup, NavigationControl, FullscreenControl, ScaleControl } from 'react-map-gl';
 import Pins from './Pins';
@@ -86,12 +85,3 @@ export default function Map() {
     </MapGL>
   );
 }
-
-
-
-
-
-
-
-
-
