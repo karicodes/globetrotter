@@ -53,6 +53,14 @@ function AddDestination(props) {
       value: country,
       label: country.name
     }
+  }).filter(country => {
+    console.log(visitedCountries)
+    console.log(country)
+    if (visitedCountries.some(c => c.country.name === country.value.name) 
+      || bucketlistCountries.some(c => c.country.name === country.value.name)) {
+      return false
+    }
+    return true;
   })
 
   const styles = {
