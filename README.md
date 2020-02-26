@@ -10,7 +10,7 @@ React web application where users are able to plot pins on a map for countries t
 - CSS
 - Styled Components
 - Semantic UI
-- react-web-gl for the map
+- react-map-gl for the map
 
 ##### Steps to run
 
