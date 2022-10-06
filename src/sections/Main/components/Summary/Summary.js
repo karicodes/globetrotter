@@ -18,12 +18,12 @@ export default function Summary() {
   const regions = visitedCountries.map(country => country.country.region);
 
   const languagesUsed = visitedCountries.reduce((acc, cv) => {
-    const languages = cv.country.languages.map(lang => lang.name)
+    const languages = Object.values(cv.country.languages);
     return acc.concat(languages)
   }, []);
 
   const currenciesUsed = visitedCountries.reduce((acc, cv) => {
-    const currencies = cv.country.currencies.map(currency => currency.name)
+    const currencies = Object.keys(cv.country.currencies);
     return acc.concat(currencies)
   }, []);
 

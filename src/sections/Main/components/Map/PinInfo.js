@@ -6,7 +6,7 @@ function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountr
   const { country, notes, image } = info;
   const [isEditOn, setIsEditOn] = useState(false);
   const [notesValue, setNotesValue] = useState(notes)
-  const displayName = `${country.name}, ${country.region}`;
+  const displayName = `${country.name.common}, ${country.region}`;
 
   function handleEdit() {
     setIsEditOn(true)
@@ -56,7 +56,7 @@ function PinInfo({ info, visitedCountries, setVisitedCountries, bucketlistCountr
         <span>
           {displayName}
         </span>
-        <img src={country.flag} width={20} alt='flag' />
+        <img src={country.flags[0]} width={20} alt='flag' />
       </Container>
       {
         isEditOn

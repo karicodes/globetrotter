@@ -51,7 +51,7 @@ function AddDestination(props) {
   const selectOptions = countries.map(country => {
     return {
       value: country,
-      label: country.name
+      label: country.name.common
     }
   }).filter(country => {
     if (visitedCountries.some(c => c.country.name === country.value.name) 

@@ -7,9 +7,7 @@ import Footer from './sections/Footer/footer';
 function App() {
   return (
     <Container>
-      <Header />
       <Main />
-      <Footer />
     </Container>
   )
 }

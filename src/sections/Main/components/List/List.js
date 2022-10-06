@@ -15,8 +15,8 @@ function List() {
         <Menu fluid vertical>
           <Menu.Item className='header'>Where I've Been</Menu.Item>
           {visitedCountries.map(country => (
-            <Menu.Item key={country.country.name}>
-              {country.country.name}
+            <Menu.Item key={country.country.name.common}>
+              {country.country.name.common}
             </Menu.Item>
           ))}
         </Menu>
@@ -25,8 +25,8 @@ function List() {
         <Menu fluid vertical>
           <Menu.Item className='header'>Where I Want To Go</Menu.Item>
           {bucketlistCountries.map(country => (
-            <Menu.Item key={country.country.name}>
-              {country.country.name}
+            <Menu.Item key={country.country.name.common}>
+              {country.country.name.common}
             </Menu.Item>
           ))}
         </Menu>
